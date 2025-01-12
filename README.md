@@ -1,88 +1,79 @@
-Ultimate Investment Agent
+# Ultimate Investment Agent
 
-Overview
+## Overview
 
-The Ultimate Investment Agent is a cutting-edge RAG (Retrieval-Augmented Generation) application designed to streamline investment-related queries. It integrates web scraping, document uploads, and a powerful knowledge base to provide an efficient and user-friendly experience. Built with Streamlit, the application features distinct functionalities for administrators and regular users, ensuring secure and effective knowledge management.
+The **Ultimate Investment Agent** is a cutting-edge RAG (Retrieval-Augmented Generation) application designed to streamline investment-related queries. It integrates web scraping, document uploads, and a powerful knowledge base to provide an efficient and user-friendly experience. Built with Streamlit, the application features distinct functionalities for administrators and regular users, ensuring secure and effective knowledge management.
 
-Key Features:
+### Key Features:
 
-Web Scraping: Extract data from websites by providing a URL.
+- **Web Scraping**: Extract data from websites by providing a URL.
+- **Document Uploads**: Upload documents to enhance the knowledge base.
+- **Knowledge Base Management** (Admin):
+  - Add, delete, and update documents.
+  - Attach metadata to documents.
+- **RAG Conversation Chain**:
+  - Retrieve and generate responses using ChromaDB.
+  - Intuitive chat interface for regular users.
+- **Authentication**: Admin access is restricted and secured.
+- **Streamlit Integration**: Hosted on Streamlit Cloud, providing a seamless and interactive user experience.
 
-Document Uploads: Upload documents to enhance the knowledge base.
+### Project Structure:
 
-Knowledge Base Management (Admin):
+- **`main.py`**: Entry point of the application.
+- **`chain.py`**: Contains the logic for:
+  - Storing and fetching data from the vector database (ChromaDB).
+  - Implementing the RAG conversation chain.
+- **`app.py`**: Manages the frontend interface and integrates the chain functionality.
+- **`requirements.txt`**: Lists dependencies required for the application.
 
-Add, delete, and update documents.
+## How It Works
 
-Attach metadata to documents.
+1. **Normal User Access**:
 
-RAG Conversation Chain:
+   - Users can chat with the agent to retrieve investment-related insights.
+   - No direct access to manage the knowledge base.
 
-Retrieve and generate responses using ChromaDB.
+2. **Admin Access**:
 
-Intuitive chat interface for regular users.
+   - Authenticate to access admin features.
+   - Manage the knowledge base by adding/deleting documents and metadata.
 
-Authentication: Admin access is restricted and secured.
+3. **Data Handling**:
 
-Streamlit Integration: Hosted on Streamlit Cloud, providing a seamless and interactive user experience.
+   - Scraped or uploaded data is stored in ChromaDB.
+   - Metadata enhances document indexing and retrieval accuracy.
 
-Project Structure:
+## Installation and Setup
 
-main.py: Entry point of the application.
+1. **Clone the Repository**:
 
-chain.py: Contains the logic for:
+   ```bash
+   git clone <repository_url>
+   cd UltimateInvestmentAgent
+   ```
 
-Storing and fetching data from the vector database (ChromaDB).
+2. **Install Dependencies**:
 
-Implementing the RAG conversation chain.
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-app.py: Manages the frontend interface and integrates the chain functionality.
+3. **Run the Application**:
 
-requirements.txt: Lists dependencies required for the application.
+   ```bash
+   streamlit run main.py
+   ```
 
-How It Works
+## Deployment
 
-Normal User Access:
+The application is hosted on **Streamlit Cloud**. Access the live version via the hosted URL.
 
-Users can chat with the agent to retrieve investment-related insights.
+## Security
 
-No direct access to manage the knowledge base.
+- Authentication ensures that only authorized administrators can manage the knowledge base.
+- Regular users have restricted access to maintain the integrity of the knowledge base.
 
-Admin Access:
-
-Authenticate to access admin features.
-
-Manage the knowledge base by adding/deleting documents and metadata.
-
-Data Handling:
-
-Scraped or uploaded data is stored in ChromaDB.
-
-Metadata enhances document indexing and retrieval accuracy.
-
-Installation and Setup
-
-Clone the Repository:
-
-git clone <repository_url>
-cd UltimateInvestmentAgent
-
-Install Dependencies:
-
-pip install -r requirements.txt
-
-Run the Application:
-
-streamlit run main.py
-
-Deployment
-
-The application is hosted on Streamlit Cloud. Access the live version via the hosted URL.
-
-Security
-
-Authentication ensures that only authorized administrators can manage the knowledge base.
-
-Regular users have restricted access to maintain the integrity of the knowledge base.
+---
 
 Enhance your investment decisions with the Ultimate Investment Agent. Whether you're an administrator managing a knowledge base or a user seeking investment insights, our application delivers accuracy and efficiency.
+
